@@ -1,0 +1,324 @@
+/* Estilos principales del Avatar Parlante en el frontend */
+.avatar-parlante-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 320px;
+    max-width: 90%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    z-index: 99999;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Estado minimizado */
+.avatar-parlante-container.minimized {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.avatar-parlante-container.minimized .avatar-content {
+    display: none;
+}
+
+/* Header del avatar */
+.avatar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3338;
+}
+
+.avatar-minimize-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #757575;
+    font-size: 16px;
+    padding: 5px;
+    transition: all 0.2s ease;
+}
+
+.avatar-minimize-btn:hover {
+    color: #0073aa;
+}
+
+/* Imagen del avatar */
+.avatar-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    border: 3px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+/* Animación cuando habla */
+.avatar-image.avatar-speaking {
+    animation: avatar-speak 0.7s infinite alternate;
+    box-shadow: 0 0 15px rgba(0, 115, 170, 0.3);
+}
+
+@keyframes avatar-speak {
+    0% { transform: scale(1); border-color: #e0e0e0; }
+    100% { transform: scale(1.05); border-color: #0073aa; }
+}
+
+/* Controles principales */
+.avatar-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.avatar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0073aa;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    min-width: 100px;
+}
+
+.avatar-btn:hover {
+    background-color: #006799;
+    transform: translateY(-2px);
+}
+
+.avatar-btn:active {
+    transform: translateY(0);
+}
+
+.avatar-btn.stop-btn {
+    background-color: #d63638;
+}
+
+.avatar-btn.stop-btn:hover {
+    background-color: #c32224;
+}
+
+.avatar-btn.secondary {
+    background-color: #f0f0f0;
+    color: #2c3338;
+}
+
+.avatar-btn.secondary:hover {
+    background-color: #e0e0e0;
+}
+
+/* Campo de pregunta */
+.avatar-question-container {
+    margin-bottom: 15px;
+}
+
+.avatar-question-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.avatar-question-input:focus {
+    border-color: #0073aa;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.2);
+}
+
+/* Área de respuesta */
+.avatar-response {
+    min-height: 60px;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.avatar-response p {
+    margin: 0 0 10px 0;
+}
+
+.avatar-response p:last-child {
+    margin-bottom: 0;
+}
+
+/* Estados especiales */
+.avatar-thinking,
+.avatar-listening,
+.avatar-error {
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.avatar-thinking {
+    background-color: #f5f5f5;
+    color: #555;
+    border-left: 4px solid #0073aa;
+}
+
+.avatar-listening {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #4caf50;
+    display: flex;
+    align-items: center;
+}
+
+.avatar-listening:before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    animation: avatar-pulse 1.5s infinite;
+}
+
+.avatar-error {
+    background-color: #ffebee;
+    color: #c62828;
+    border-left: 4px solid #f44336;
+}
+
+@keyframes avatar-pulse {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+/* Botón de micrófono */
+.avatar-mic-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 10px;
+}
+
+.avatar-mic-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.avatar-mic-btn.active {
+    background-color: #ffebee;
+    color: #f44336;
+    animation: avatar-pulse 1.5s infinite;
+}
+
+/* Versión minimizada */
+.avatar-minimized-view {
+    display: none;
+}
+
+.avatar-parlante-container.minimized .avatar-minimized-view {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #0073aa;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    animation: avatar-bounce 2s infinite;
+}
+
+@keyframes avatar-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    .avatar-parlante-container {
+        background-color: #2c3338;
+        border-color: #1d2327;
+    }
+
+    .avatar-title {
+        color: #f0f0f0;
+    }
+
+    .avatar-image {
+        background-color: #3c434a;
+        border-color: #4d555e;
+    }
+
+    .avatar-response {
+        background-color: #1d2327;
+        border-color: #2c3338;
+        color: #f0f0f0;
+    }
+
+    .avatar-question-input {
+        background-color: #1d2327;
+        border-color: #2c3338;
+        color: #f0f0f0;
+    }
+
+    .avatar-btn.secondary {
+        background-color: #3c434a;
+        color: #f0f0f0;
+    }
+
+    .avatar-btn.secondary:hover {
+        background-color: #4d555e;
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .avatar-parlante-container {
+        right: 15px;
+        bottom: 15px;
+        width: calc(100% - 30px);
+    }
+
+    .avatar-controls {
+        flex-direction: column;
+    }
+
+    .avatar-btn {
+        width: 100%;
+    }
+}

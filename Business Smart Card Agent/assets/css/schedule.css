@@ -1,0 +1,172 @@
+/* Estilos principales para el gestor de programación */
+.schedule-manager {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.schedule-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.schedule-control-panel,
+.schedule-list-panel {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.schedule-control-panel h2,
+.schedule-list-panel h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.regular-text {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilos para estados */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.active {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-badge.inactive {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-badge.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-badge.expired {
+    background-color: #d6d8d9;
+    color: #1b1e21;
+}
+
+.days-remaining {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #6c757d;
+}
+
+/* Tabla de programaciones */
+.schedule-table-container {
+    margin-top: 15px;
+    overflow-x: auto;
+}
+
+#schedules-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#schedules-table th {
+    text-align: left;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+#schedules-table td {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    vertical-align: middle;
+}
+
+#schedules-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.loading-text {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+}
+
+/* Filtros */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filters select,
+.filters input {
+    flex: 1;
+}
+
+/* Botones de acción */
+.button {
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.button-primary {
+    background-color: #0073aa;
+    color: white;
+    border: 1px solid #006799;
+}
+
+.button-primary:hover {
+    background-color: #006799;
+}
+
+.button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .schedule-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .filters {
+        flex-direction: column;
+    }
+}

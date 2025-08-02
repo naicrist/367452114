@@ -1,0 +1,358 @@
+/* Estilos principales para el panel de administración del Avatar Parlante */
+.wrap.avatar-parlante {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Encabezado */
+.avatar-parlante-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.avatar-parlante-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #23282d;
+}
+
+.avatar-parlante-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+/* Sistema de pestañas */
+.nav-tab-wrapper {
+    margin: 0 0 20px;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav-tab {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background: #f5f5f5;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.2s ease;
+}
+
+.nav-tab:hover {
+    background: #f0f0f0;
+    color: #23282d;
+}
+
+.nav-tab-active {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    color: #23282d;
+    margin-bottom: -1px;
+}
+
+/* Contenido de las pestañas */
+.avatar-tab-content {
+    display: none;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+.avatar-tab-content.active {
+    display: block;
+}
+
+/* Formularios */
+.avatar-form-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+.avatar-form-section h2 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+.form-table th {
+    width: 250px;
+    padding: 20px 10px 20px 0;
+    font-weight: 600;
+}
+
+.form-table td {
+    padding: 15px 10px;
+}
+
+.form-table input[type="text"],
+.form-table input[type="number"],
+.form-table input[type="date"],
+.form-table input[type="url"],
+.form-table select,
+.form-table textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+}
+
+.form-table input[type="number"] {
+    width: 80px;
+}
+
+.form-table textarea {
+    min-height: 100px;
+}
+
+/* Selectores de avatar */
+.avatar-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.avatar-option {
+    position: relative;
+    width: 100px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.avatar-option:hover {
+    border-color: #ddd;
+}
+
+.avatar-option.selected {
+    border-color: #0073aa;
+}
+
+.avatar-option input {
+    position: absolute;
+    opacity: 0;
+}
+
+.avatar-option img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+.avatar-option label {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+/* Probador de voz */
+.voice-test-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.voice-test-container h3 {
+    margin-top: 0;
+}
+
+.voice-test-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#voice-test-text {
+    flex-grow: 1;
+    padding: 8px;
+}
+
+/* Controles de rango */
+.range-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.range-control label {
+    min-width: 100px;
+    font-weight: 600;
+}
+
+.range-control input[type="range"] {
+    flex-grow: 1;
+}
+
+.range-value {
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Programación */
+.schedule-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.schedule-field {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Reportes */
+.report-filters {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.filter-field {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-actions {
+    margin-top: 15px;
+}
+
+/* Tabla de reportes */
+.avatar-report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.avatar-report-table th,
+.avatar-report-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.avatar-report-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.avatar-report-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Notificaciones y mensajes */
+.avatar-notice {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-left: 4px solid;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.avatar-notice.success {
+    border-left-color: #46b450;
+}
+
+.avatar-notice.error {
+    border-left-color: #dc3232;
+}
+
+.avatar-notice.warning {
+    border-left-color: #ffb900;
+}
+
+.avatar-notice.info {
+    border-left-color: #00a0d2;
+}
+
+/* Botones */
+.button-primary {
+    background: #0073aa;
+    border-color: #006799;
+    color: #fff;
+    text-shadow: none;
+}
+
+.button-primary:hover {
+    background: #008ec2;
+    border-color: #006799;
+    color: #fff;
+}
+
+.avatar-button {
+    padding: 8px 15px;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.avatar-button-large {
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .form-table th,
+    .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .form-table th {
+        padding-bottom: 5px;
+    }
+
+    .filter-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filter-field {
+        width: 100%;
+    }
+}
+
+/* Animaciones */
+@keyframes avatar-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.avatar-loading {
+    animation: avatar-pulse 1.5s infinite;
+    text-align: center;
+    padding: 20px;
+    color: #555;
+}
